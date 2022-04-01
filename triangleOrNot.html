@@ -29,7 +29,7 @@
         </div>
         <button id="calc">Calculate</button>
         <button id="clear">Clear</button>
-        <p></p>
+        <p class="hidden"></p>
     </div>
 </div>
 
@@ -57,15 +57,17 @@
         if (isNaN(num)) {
             return false
         }
-        if (num <= 0)
+        if (num <= 0) {
             return false
+        }
+        return true;
     }
 
     calculateButton.addEventListener('click', function (e) {
         let sideA = +a.value;
         let sideB = +b.value;
         let sideC = +c.value;
-        <p class="hidden"></p>
+        ans.classList.remove("hidden")
         if (!checkIsValid(sideA) || !checkIsValid(sideC)) {
             ans.textContent = 'Invalid Inputs';
             return;
@@ -78,9 +80,9 @@
     })
 
     clearButton.addEventListener('click', function (e) {
-        a.value = "";
-        b.value = "";
-        c.value = "";
+        a.value = " ";
+        b.value = " ";
+        c.value = " ";
         ans.textContent = "";
         ans.classList.add("hidden");
     })
