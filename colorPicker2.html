@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Updated Color Picker!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ultrices sagittis orci a scelerisque purus semper eget. Nulla facilisi etiam dignissim
+            diam quis enim. Nunc consequat interdum varius sit amet mattis vulputate. Aliquam ultrices sagittis orci a
+            scelerisque purus semper. Ipsum dolor sit amet consectetur. Nulla pellentesque dignissim enim sit amet
+            venenatis urna cursus eget. Erat velit scelerisque in dictum non consectetur a erat. In hac habitasse platea
+            dictumst quisque sagittis. Elit ut aliquam purus sit amet luctus venenatis lectus. Eget lorem dolor sed
+            viverra ipsum nunc. Risus sed vulputate odio ut. Velit sed ullamcorper morbi tincidunt ornare massa eget
+            egestas purus. Laoreet suspendisse interdum consectetur libero. Urna nunc id cursus metus aliquam eleifend
+            mi in.</p>
+        <div class="row">
+            <h3>Background</h3>
+            <input type="color" id="bg" value="#FFFFFF">
+        </div>
+        <div class="row">
+            <h3>Text!</h3>
+            <input type="color" id="txt">
+        </div>
+        <button id="clear">Clear</button>
+    </div>
+</div>
+</body>
+<script>
+
+    const content = document.querySelector('.content');
+    const bg = document.getElementById('bg');
+    const txt = document.getElementById('txt');
+    const clear = document.getElementById('clear');
+
+
+    bg.addEventListener('change', function (e) {
+        content.style.backgroundColor = e.target.value;
+    });
+    txt.addEventListener('change', function (e) {
+        content.style.color = e.target.value
+    });
+
+    clear.addEventListener('click', function(e){
+    content.style.backgroundColor = 'white';
+    bg.value = '#FFFFFF'
+    content.style.color = 'black';
+    txt.value = '#000000'
+    });
+
+</script>
+</html>
