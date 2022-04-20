@@ -24,13 +24,13 @@
 
     // add new element in addition to existing elements
     const pokemon = document.createElement('h1');
-    pokemon.innerHTML = 'I love Pokemon';
+    pokemon.innerHTML = 'I like Pokemon';
     content.appendChild(pokemon);
 
     // add new element in addition to existing elements
     const money = document.createElement('h1');
-    pokemon.innerHTML = 'I love money';
-    content.appendChild(money);
+    money.innerHTML = 'I like money';
+    content.insertAdjacentElement("beforebegin", money);
 </script>
 </body>
 </html>
