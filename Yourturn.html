@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gooday, _____!</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <div class="row">
+            <div>
+                <label for="first">First Name</label>
+                <input type="text" id="first">
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <label for="last">Last Name</label>
+                <input type="text" id="last">
+            </div>
+        </div>
+        <button id="Gooday">Say gooday</button>
+        <div class="insert">
+
+        </div>
+    </div>
+</div>
+
+<script>
+    const insert = document.querySelector('.insert');
+    const firstName = document.getElementById('first');
+    const lastName = document.getElementById('last');
+
+    const helloButton = document.getElementById('hello')
+
+    function sayHello() {
+        const names = document.createElement('p');
+        let first = firstName.value;
+        let last = lastName.value;
+        let fullName = `${first} ${last}`;
+
+        names.innerHTML = `Hello ${fullName}!`;
+        insert.insertAdjacentElement('afterbegin', names);
+        firstName.value = "";
+        lastName.value = "";
+    }
+
+    helloButton.addEventListener('click', sayHello);
+</script>
+</body>
+</html>
