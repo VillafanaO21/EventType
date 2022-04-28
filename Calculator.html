@@ -44,7 +44,37 @@
 
         solveButton.addEventListener('click', function(e){
 
-
+            const answer = document.createElement('p')
+            if (choiceBox.value == 'add') {
+                let addendOne = +box.value;
+                let addendTwo = +box2.value;
+                let sum = addendOne + addendTwo;
+                answer.innerHTML = `${addendOne} + ${addendTwo} = ${sum}`;
+            } else if (choiceBox.value == 'sub') {
+                let minuend = +box.value;
+                let subtrahend = +box2.value;
+                let difference = minuend - subtrahend;
+                answer.innerHTML = `${minuend} - ${subtrahend} = ${difference}`;
+            } else if (choiceBox.value == 'mult') {
+                let multplicand = +box.value;
+                let multiplier = +box2.value;
+                let product = multplicand * multiplier;
+                answer.innerHTML = `${multplicand} * ${multiplier} = ${product}`;
+            } else if (choiceBox.value == 'div') {
+                let dividend = +box.value;
+                let divisor = +box2.value;
+                let quotient = dividend / divisor;
+                answer.innerHTML = `${dividend} / ${divisor} = ${quotient}`;
+            } else if (choiceBox.value == 'rem') {
+                let dividendRem = +box.value;
+                let divisorRem = +box2.value;
+                let remainder = dividendRem % divisorRem;
+                let quotient = (dividendRem - remainder) / divisorRem;
+                answer.innerHTML = `${dividendRem} % ${divisorRem} = ${remainder}`;
+            }
+            insert.insertAdjacentElement('afterbegin', answer);
+            box.value = "";
+            box2.value = "";
 
 
 
