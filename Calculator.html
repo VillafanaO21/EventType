@@ -22,7 +22,6 @@
             <button id="divide">/</button>
             <button id="mod">%</button>
 
-            <button id="solve"></button>
             <div class="insert">
 
             </div>
@@ -42,43 +41,56 @@
         const solveButton = document.getElementById('solve')
 
 
-        solveButton.addEventListener('click', function(e){
 
+
+             add.addEventListener('click', function(e) {
+                 const answer = document.createElement('p')
+                 let addOne = +box.value;
+                 let addTwo = +box2.value;
+                 let sum = addOne + addTwo;
+                 answer.innerHTML=`${addOne} + ${addTwo} = ${sum}`
+                 history.insertAdjacentElement('afterbegin', answer);
+             })
+        subtract.addEventListener('click', function(e) {
             const answer = document.createElement('p')
-            if (choiceBox.value == 'add') {
-                let addendOne = +box.value;
-                let addendTwo = +box2.value;
-                let sum = addendOne + addendTwo;
-                answer.innerHTML = `${addendOne} + ${addendTwo} = ${sum}`;
-            } else if (choiceBox.value == 'sub') {
-                let minuend = +box.value;
-                let subtrahend = +box2.value;
-                let difference = minuend - subtrahend;
-                answer.innerHTML = `${minuend} - ${subtrahend} = ${difference}`;
-            } else if (choiceBox.value == 'mult') {
-                let multplicand = +box.value;
-                let multiplier = +box2.value;
-                let product = multplicand * multiplier;
-                answer.innerHTML = `${multplicand} * ${multiplier} = ${product}`;
-            } else if (choiceBox.value == 'div') {
-                let dividend = +box.value;
-                let divisor = +box2.value;
-                let quotient = dividend / divisor;
-                answer.innerHTML = `${dividend} / ${divisor} = ${quotient}`;
-            } else if (choiceBox.value == 'rem') {
-                let dividendRem = +box.value;
-                let divisorRem = +box2.value;
-                let remainder = dividendRem % divisorRem;
-                let quotient = (dividendRem - remainder) / divisorRem;
-                answer.innerHTML = `${dividendRem} % ${divisorRem} = ${remainder}`;
-            }
-            insert.insertAdjacentElement('afterbegin', answer);
-            box.value = "";
-            box2.value = "";
-
-
-
+            let subOne = +box.value;
+            let subTwo = +box2.value;
+            let sum = subOne - subTwo;
+            answer.innerHTML=`${subOne} - ${subTwo} = ${sum}`
+            history.insertAdjacentElement('afterbegin', answer);
         })
+        multiple.addEventListener('click', function(e) {
+            const answer = document.createElement('p')
+            let timesOne = +box.value;
+            let timesTwo = +box2.value;
+            let sum = timesOne * timesTwo;
+            answer.innerHTML=`${timesOne} * ${timesTwo} = ${sum}`
+            history.insertAdjacentElement('afterbegin', answer);
+        })
+        divide.addEventListener('click', function(e) {
+            const answer = document.createElement('p')
+            let divideOne = +box.value;
+            let divideTwo = +box2.value;
+            let sum = divideOne / divideTwo;
+            answer.innerHTML=`${divideOne} / ${divideTwo} = ${sum}`
+            history.insertAdjacentElement('afterbegin', answer);
+        })
+        mod.addEventListener('click', function(e) {
+            const answer = document.createElement('p')
+            let modOne = +box.value;
+            let modTwo = +box2.value;
+            let sum = modOne % modTwo;
+            answer.innerHTML=`${modOne} % ${modTwo} = ${sum}`
+            history.insertAdjacentElement('afterbegin', answer);
+        })
+
+
+
+
+
+
+
+
 
 
     </script>
